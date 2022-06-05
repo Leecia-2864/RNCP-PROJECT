@@ -44,6 +44,45 @@ CREATE TABLE IF NOT EXISTS  reviews(
     FOREIGN KEY(property_id) REFERENCES property(id)
 );
 
+## SQL CODES
+-------- What is the avarage price per night of an Airbnb in Paris------
+SELECT round(avg(price)) as AVG_Price
+FROM prices;
+------- The average price per night of an Airbnb in Paris is 111 euros ------
+
+## SQL CODES
+-------- How does the average price of an Airbnb listing, per month, compare to the private rental market?-------
+SELECT round(avg(monthly_price),2) as Average_price_per_month
+FROM prices;
+--------- The average monthly price of an airbnb listing  as compared to the mormal rental market is quite highh-----
+
+## SQL CODES
+-------- What is the number of listings per room type --------
+SELECT room_type, COUNT(room_type) 
+FROM property
+GROUP BY room_type;
+-------- We can see that entire home and apartments has the number of listings ----------
+
+## SQL CODES
+------ what are the top 5 most expensive neighbours per night -------
+SELECT property.neighbourhood, AVG(prices.price) as AVG_PRICE  
+FROM property
+JOIN prices ON
+prices.id = property.id
+GROUP BY 1
+ORDER by 2
+DESC LIMIT 5;
+------ It is seen that the top 5 most expensive airbnb per night in paris are Louvre, XIV Arrondissement, Madeleine, Champs-Elysees, and Chatelet.-------
+
+
+## SQL CODES
+--------- We want to known thename of the host with the most reviews -------
+SELECT host_name as HOST, property.neighbourhood as NEIGHBOURHOOD, count(reviews.reviewer_id) as NUMBER_OF_REVIEWS
+FROM property
+JOIN host on property.id = host.host_id
+JOIN reviews on property.id = reviews.listing_id
+ORDER BY 3 DESC
+LIMIT 1
 
 
 
