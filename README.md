@@ -37,7 +37,7 @@ After these 2 parts are finished, you need to create 8 charts using Matplotlib a
 ## Deliverables
 
 - '1.-Data Cleaning.ipynb' with your responses
-- '2.-EDA.ipynb' with your responses
+- '2.-Airbnb.ipynb' with your responses
 - '3. -Charts_{Name}.ipynd with your charts
 
 
@@ -47,3 +47,6 @@ Upon completion, add your deliverables to git. Then commit git and push your bra
 
 
 PLEASE NOTE: YOU NEED TO SHARE THE LINK TO THE GITHUB REPO WITH THE DELIVERABLES TILL 8.30 AM ON MONDAY!
+
+## Link to Trello
+https://trello.com/invite/b/hXGchWbd/9e6d9cad2639f88d007936c951d5e226/datacleaningproject
